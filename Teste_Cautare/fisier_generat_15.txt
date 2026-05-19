@@ -1,0 +1,2 @@
+tehnologie programare fisier mostenire cautare student masina memorie mostenire structura pointer mostenire date tehnologie informatie masina date obiect motor baza polimorfism baza algoritm date programare 
+Acesta este fisierul generat cu numarul 15. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.

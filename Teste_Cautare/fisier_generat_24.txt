@@ -1,0 +1,2 @@
+index structura algoritm date referinta programare cautare algoritm structura informatie polimorfism obiect polimorfism informatie obiect polimorfism masina baza informatie referinta masina motor algoritm memorie structura 
+Acesta este fisierul generat cu numarul 24. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.

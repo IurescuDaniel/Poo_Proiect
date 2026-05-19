@@ -1,0 +1,2 @@
+informatie obiect polimorfism memorie informatie fisier student programare memorie student structura fisier fisier cautare cautare structura obiect cautare date structura programare programare mostenire masina referinta 
+Acesta este fisierul generat cu numarul 21. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.

@@ -1,0 +1,2 @@
+student polimorfism motor baza student memorie clasa motor referinta algoritm memorie baza memorie clasa index cautare clasa structura structura polimorfism algoritm motor algoritm mostenire programare 
+Acesta este fisierul generat cu numarul 23. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.

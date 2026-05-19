@@ -1,0 +1,2 @@
+algoritm referinta pointer obiect referinta student memorie motor obiect cautare polimorfism student student polimorfism baza date algoritm baza mostenire algoritm informatie referinta motor polimorfism baza 
+Acesta este fisierul generat cu numarul 5. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.

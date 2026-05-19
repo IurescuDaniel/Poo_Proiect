@@ -1,0 +1,2 @@
+clasa index memorie fisier index cautare student masina referinta index pointer clasa cautare tehnologie student motor motor programare polimorfism fisier baza programare fisier informatie structura 
+Acesta este fisierul generat cu numarul 8. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.

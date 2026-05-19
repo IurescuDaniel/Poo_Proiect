@@ -1,0 +1,2 @@
+referinta clasa algoritm fisier clasa baza index obiect referinta obiect fisier polimorfism algoritm pointer algoritm masina informatie cautare fisier programare informatie clasa programare student referinta 
+Acesta este fisierul generat cu numarul 1. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.
