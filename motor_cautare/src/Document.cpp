@@ -12,6 +12,7 @@ bool Document::citesteFisier(const std::string& cale) {
         return false;
     }
     
+    // Citirea eficientă a întregului fișier într-un string
     std::stringstream buffer;
     buffer << fisier.rdbuf();
     continut = buffer.str();
@@ -25,18 +26,24 @@ std::vector<std::string> Document::getNumeCuvinte() const {
     std::string cuvantCurent = "";
     
     for (char c : continut) {
+        // Păstrăm doar caracterele alfanumerice pentru a forma cuvinte
         if (std::isalnum(static_cast<unsigned char>(c))) {
-            // Transformăm în litere mici pentru o indexare case-insensitive (opțional, dar util)
-            cuvantCurent += std::tolower(static_cast<unsigned char>(c));
+            cuvantCurent += c;
         } else {
             if (!cuvantCurent.empty()) {
+                // MODIFICAT: Normalizare lowercase folosind std::transform
+                std::transform(cuvantCurent.begin(), cuvantCurent.end(), cuvantCurent.begin(),
+                    [](unsigned char ch){ return std::tolower(ch); });
                 cuvinte.push_back(cuvantCurent);
                 cuvantCurent = "";
             }
         }
     }
     
+    // Adăugăm ultimul cuvânt dacă există
     if (!cuvantCurent.empty()) {
+        std::transform(cuvantCurent.begin(), cuvantCurent.end(), cuvantCurent.begin(),
+            [](unsigned char ch){ return std::tolower(ch); });
         cuvinte.push_back(cuvantCurent);
     }
     
