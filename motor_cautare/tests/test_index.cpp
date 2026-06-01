@@ -104,12 +104,50 @@ void testObserverLogger() {
     std::cout << "testObserverLogger() trecut cu succes!\n";
 }
 
+// NOU: testCautareAvansata
+void testCautareAvansata() {
+    std::cout << "Rulare testCautareAvansata()...\n";
+    
+    std::string testDir = "temp_test_advanced_dir";
+    fs::create_directory(testDir);
+    
+    creazaFisierTest(testDir + "/doc1.txt", "mere pere banane cirese");
+    creazaFisierTest(testDir + "/doc2.txt", "mere struguri prune cirese");
+    creazaFisierTest(testDir + "/doc3.txt", "prune caise cirese");
+    
+    Index idx;
+    idx.indexeazaDirector(testDir);
+    
+    // Test AND
+    {
+        auto rez = idx.cautaAvansat("mere AND cirese");
+        assert(rez.size() == 2);
+        assert(rez[testDir + "/doc1.txt"] == 2); // 1 + 1
+        assert(rez[testDir + "/doc2.txt"] == 2); // 1 + 1
+        assert(rez.find(testDir + "/doc3.txt") == rez.end());
+    }
+    
+    // Test OR
+    {
+        auto rez = idx.cautaAvansat("mere OR prune");
+        assert(rez.size() == 3);
+        assert(rez[testDir + "/doc1.txt"] == 1); // doar 'mere' (1)
+        assert(rez[testDir + "/doc2.txt"] == 2); // 'mere' (1) + 'prune' (1)
+        assert(rez[testDir + "/doc3.txt"] == 1); // doar 'prune' (1)
+    }
+
+    // Curățare
+    fs::remove_all(testDir);
+    std::cout << "testCautareAvansata() trecut cu succes!\n";
+}
+
 int main() {
     std::cout << "=== Start Teste Unitare ===\n";
     
     testCautareSimpla();
     testFisierInexistent();
     testObserverLogger();
+    testCautareAvansata();
     
     std::cout << "=== Toate testele au trecut! ===\n";
     return 0;

@@ -29,6 +29,9 @@ public:
     void attach(Observer* obs);
     void notify(const std::string& cuvant, int nrRezultate) const;
 
+    // NOU: Căutare avansată cu operatorii AND și OR
+    std::map<std::string, int> cautaAvansat(const std::string& interogare) const;
+
     // NOU: Getter pentru statistici
     int getTotalDocumente() const { return totalDocumenteIndexate; }
     size_t getDimensiuneIndex() const { return indexInversat.size(); }

@@ -7,8 +7,9 @@ void afiseazaMeniu() {
     std::cout << "\n=== Motor de Cautare Full-Text ===\n";
     std::cout << "1. Seteaza calea directorului si indexeaza\n";
     std::cout << "2. Cauta un cuvant\n";
-    std::cout << "3. Iesire\n";
-    std::cout << "Alege o optiune (1-3): ";
+    std::cout << "3. Cautare avansata (AND / OR)\n";
+    std::cout << "4. Iesire\n";
+    std::cout << "Alege o optiune (1-4): ";
 }
 
 int main() {
@@ -17,7 +18,7 @@ int main() {
     motorCautare.attach(&logger);
     int optiune;
     
-    // MODIFICAT: Adaugare loop de meniu interactiv (Optiunile 1-3)
+    // MODIFICAT: Adaugare loop de meniu interactiv (Optiunile 1-4)
     do {
         afiseazaMeniu();
         if (!(std::cin >> optiune)) {
@@ -72,13 +73,32 @@ int main() {
                 }
                 break;
             }
-            case 3:
+            case 3: {
+                std::string interogare;
+                std::cout << "Introduceti interogarea (ex: mere AND pere sau mere OR struguri): ";
+                std::getline(std::cin, interogare);
+                
+                if (interogare.empty()) break;
+                
+                std::map<std::string, int> rezultate = motorCautare.cautaAvansat(interogare);
+                
+                if (rezultate.empty()) {
+                    std::cout << "Niciun rezultat gasit pentru interogarea '" << interogare << "'.\n";
+                } else {
+                    std::cout << "Interogarea '" << interogare << "' are rezultate in " << rezultate.size() << " fisier(e):\n";
+                    for (const auto& [cale, nrAparitii] : rezultate) {
+                        std::cout << "  - " << cale << " (Aparitii totale: " << nrAparitii << ")\n";
+                    }
+                }
+                break;
+            }
+            case 4:
                 std::cout << "Se inchide aplicatia...\n";
                 break;
             default:
-                std::cout << "Optiune invalida! Va rugam selectati 1, 2 sau 3.\n";
+                std::cout << "Optiune invalida! Va rugam selectati 1, 2, 3 sau 4.\n";
         }
-    } while (optiune != 3);
+    } while (optiune != 4);
     
     return 0;
 }

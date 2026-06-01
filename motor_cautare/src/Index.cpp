@@ -3,6 +3,7 @@
 #include <filesystem>
 #include <algorithm>
 #include <iostream>
+#include <sstream>
 
 namespace fs = std::filesystem;
 
@@ -80,4 +81,64 @@ void Index::notify(const std::string& cuvant, int nrRezultate) const {
             obs->update(cuvant, nrRezultate);
         }
     }
+}
+
+namespace {
+    std::string normalizeazaCuvant(const std::string& cuvant) {
+        std::string rezultat = cuvant;
+        std::transform(rezultat.begin(), rezultat.end(), rezultat.begin(),
+            [](unsigned char ch) { return std::tolower(ch); });
+        return rezultat;
+    }
+}
+
+std::map<std::string, int> Index::cautaAvansat(const std::string& interogare) const {
+    std::vector<std::string> tokens;
+    std::string token;
+    std::istringstream iss(interogare);
+    while (iss >> token) {
+        tokens.push_back(token);
+    }
+
+    if (tokens.empty()) {
+        return {};
+    }
+
+    // Primul cuvant
+    std::string primulCuvant = normalizeazaCuvant(tokens[0]);
+    std::map<std::string, int> rezultateCurente = cauta(primulCuvant);
+
+    size_t i = 1;
+    while (i < tokens.size()) {
+        if (i + 1 >= tokens.size()) {
+            break;
+        }
+
+        std::string op = tokens[i];
+        std::string urmatorulCuvant = normalizeazaCuvant(tokens[i + 1]);
+        std::map<std::string, int> rezultateUrmator = cauta(urmatorulCuvant);
+
+        std::map<std::string, int> noiRezultate;
+
+        if (op == "AND") {
+            for (const auto& [cale, nrAparitii] : rezultateCurente) {
+                auto it = rezultateUrmator.find(cale);
+                if (it != rezultateUrmator.end()) {
+                    noiRezultate[cale] = nrAparitii + it->second;
+                }
+            }
+        } else if (op == "OR") {
+            noiRezultate = rezultateCurente;
+            for (const auto& [cale, nrAparitii] : rezultateUrmator) {
+                noiRezultate[cale] += nrAparitii;
+            }
+        } else {
+            break;
+        }
+
+        rezultateCurente = std::move(noiRezultate);
+        i += 2;
+    }
+
+    return rezultateCurente;
 }
