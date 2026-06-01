@@ -1,0 +1,2 @@
+informatie algoritm fisier structura cautare polimorfism fisier index index motor pointer fisier index referinta memorie clasa motor mostenire programare index memorie programare student polimorfism programare 
+Acesta este fisierul generat cu numarul 17. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.

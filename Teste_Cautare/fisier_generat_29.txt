@@ -1,0 +1,2 @@
+referinta fisier index structura cautare structura cautare structura cautare masina informatie student referinta fisier pointer index motor cautare memorie fisier baza fisier tehnologie referinta polimorfism 
+Acesta este fisierul generat cu numarul 29. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.

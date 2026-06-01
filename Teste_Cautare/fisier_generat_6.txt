@@ -1,0 +1,2 @@
+polimorfism fisier referinta cautare obiect fisier structura index cautare informatie masina baza memorie pointer masina algoritm referinta informatie baza masina baza obiect cautare clasa algoritm 
+Acesta este fisierul generat cu numarul 6. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.

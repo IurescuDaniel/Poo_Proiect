@@ -1,0 +1,2 @@
+clasa informatie referinta mostenire clasa date masina structura tehnologie referinta student clasa date clasa pointer obiect referinta polimorfism programare memorie fisier clasa cautare clasa structura 
+Acesta este fisierul generat cu numarul 20. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.

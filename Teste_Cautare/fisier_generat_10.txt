@@ -1,0 +1,2 @@
+tehnologie pointer fisier informatie referinta student programare structura cautare pointer masina student programare programare motor mostenire obiect informatie cautare structura obiect mostenire tehnologie mostenire polimorfism 
+Acesta este fisierul generat cu numarul 10. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.

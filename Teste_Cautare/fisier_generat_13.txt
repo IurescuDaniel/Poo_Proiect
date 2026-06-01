@@ -1,0 +1,2 @@
+date tehnologie fisier pointer obiect mostenire student date student informatie index index index motor algoritm fisier index baza mostenire memorie polimorfism pointer mostenire structura mostenire 
+Acesta este fisierul generat cu numarul 13. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.

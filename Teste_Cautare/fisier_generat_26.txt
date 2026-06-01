@@ -1,0 +1,2 @@
+index memorie obiect motor student algoritm structura memorie cautare mostenire date student structura baza programare mostenire informatie clasa cautare masina mostenire programare cautare tehnologie pointer 
+Acesta este fisierul generat cu numarul 26. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.

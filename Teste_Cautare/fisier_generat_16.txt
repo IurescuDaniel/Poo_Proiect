@@ -1,0 +1,2 @@
+obiect algoritm clasa obiect masina student fisier algoritm student mostenire obiect index cautare date fisier date programare mostenire obiect referinta student memorie referinta motor student 
+Acesta este fisierul generat cu numarul 16. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.

@@ -1,0 +1,2 @@
+motor date mostenire obiect programare date mostenire informatie motor algoritm polimorfism pointer algoritm masina informatie pointer motor structura baza algoritm programare structura clasa informatie informatie 
+Acesta este fisierul generat cu numarul 4. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.

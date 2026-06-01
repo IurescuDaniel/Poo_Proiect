@@ -1,0 +1,2 @@
+informatie motor referinta pointer masina baza fisier pointer algoritm student structura baza referinta mostenire date pointer fisier student pointer structura polimorfism memorie baza obiect baza 
+Acesta este fisierul generat cu numarul 19. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.

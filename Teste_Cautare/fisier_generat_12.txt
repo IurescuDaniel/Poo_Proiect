@@ -1,0 +1,2 @@
+structura date clasa masina programare mostenire student motor structura clasa tehnologie polimorfism mostenire pointer polimorfism polimorfism baza obiect index pointer index clasa polimorfism programare obiect 
+Acesta este fisierul generat cu numarul 12. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.

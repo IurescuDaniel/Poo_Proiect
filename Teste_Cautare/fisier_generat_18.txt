@@ -1,0 +1,2 @@
+obiect obiect masina masina obiect index algoritm structura algoritm index masina tehnologie algoritm baza informatie clasa informatie index fisier student pointer baza student informatie masina 
+Acesta este fisierul generat cu numarul 18. Contine text suficient pentru a trece de suta de caractere necesara pentru testul nostru de la POO.
