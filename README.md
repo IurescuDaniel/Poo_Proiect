@@ -1,9 +1,9 @@
 # 🔍 Motor de Căutare Simplu pentru Documente Text
 
 > Temă: Motor de Căutare Simplu pentru Documente Text  
-> Limbaj: **C++17**
-> Nume: Iurescu Daniel Liviu
-> Grupa: 3123B
+> Limbaj: **C++17**   
+> Nume: Iurescu Daniel Liviu   
+> Grupa: 3123B   
 
 ---
 
