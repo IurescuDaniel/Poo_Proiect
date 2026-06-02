@@ -1,8 +1,9 @@
 # 🔍 Motor de Căutare Simplu pentru Documente Text
 
-> Proiect realizat în cadrul disciplinei **Programare Orientată pe Obiecte (POO)**  
-> Temă: **3123B** — Motor de Căutare Simplu pentru Documente Text  
+> Temă: Motor de Căutare Simplu pentru Documente Text  
 > Limbaj: **C++17**
+> Nume: Iurescu Daniel Liviu
+> Grupa: 3123B
 
 ---
 
