@@ -141,6 +141,32 @@ void testCautareAvansata() {
     std::cout << "testCautareAvansata() trecut cu succes!\n";
 }
 
+// NOU: testStopWords
+void testStopWords() {
+    std::cout << "Rulare testStopWords()...\n";
+    
+    std::string testDir = "temp_test_stopwords_dir";
+    fs::create_directory(testDir);
+    
+    creazaFisierTest(testDir + "/doc1.txt", "mere si pere pentru ca cirese");
+    
+    Index idx;
+    idx.indexeazaDirector(testDir);
+    
+    // "si", "pentru", "ca" sunt stop-words și NU trebuie indexate
+    assert(idx.cauta("si").empty());
+    assert(idx.cauta("pentru").empty());
+    assert(idx.cauta("ca").empty());
+    
+    // "mere", "pere", "cirese" sunt cuvinte normale și trebuie indexate
+    assert(!idx.cauta("mere").empty());
+    assert(!idx.cauta("pere").empty());
+    assert(!idx.cauta("cirese").empty());
+    
+    fs::remove_all(testDir);
+    std::cout << "testStopWords() trecut cu succes!\n";
+}
+
 int main() {
     std::cout << "=== Start Teste Unitare ===\n";
     
@@ -148,6 +174,7 @@ int main() {
     testFisierInexistent();
     testObserverLogger();
     testCautareAvansata();
+    testStopWords();
     
     std::cout << "=== Toate testele au trecut! ===\n";
     return 0;
