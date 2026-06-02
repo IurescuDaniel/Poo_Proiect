@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <unordered_map>
 
 #include "Observer.h"
 
@@ -11,7 +12,7 @@
 // Cheia interna va fi calea fisierului, valoarea numarul de aparitii
 class Index {
 private:
-    std::map<std::string, std::map<std::string, int>> indexInversat;
+    std::unordered_map<std::string, std::map<std::string, int>> indexInversat;
     int totalDocumenteIndexate = 0; // NOU: Tine evidenta numarului total de documente
     std::vector<Observer*> observers; // NOU: Lista de observatori
 

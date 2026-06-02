@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra
+CXXFLAGS = -std=c++17 -O3 -Wall -Wextra
 TARGET = aplicatie_motor
 SRCS = $(wildcard motor_cautare/src/*.cpp)
 OBJS = $(SRCS:.cpp=.o)

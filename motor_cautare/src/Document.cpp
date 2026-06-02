@@ -29,35 +29,49 @@ bool Document::citesteFisier(const std::string& cale) {
     return true;
 }
 
+// Funcții ajutătoare inline extrem de rapide pentru lucrul cu setul ASCII (evită localizarea standard)
+inline bool is_alnum_ascii(unsigned char c) {
+    return (c >= 'a' && c <= 'z') || 
+           (c >= 'A' && c <= 'Z') || 
+           (c >= '0' && c <= '9');
+}
+
+inline char to_lower_ascii(unsigned char c) {
+    if (c >= 'A' && c <= 'Z') {
+        return static_cast<char>(c + 32);
+    }
+    return static_cast<char>(c);
+}
+
 std::vector<std::string> Document::getNumeCuvinte() const {
     std::vector<std::string> cuvinte;
+    cuvinte.reserve(continut.size() / 7);
+    
     std::string cuvantCurent = "";
+    cuvantCurent.reserve(32);
     
     for (char c : continut) {
-        // Păstrăm doar caracterele alfanumerice pentru a forma cuvinte
-        if (std::isalnum(static_cast<unsigned char>(c))) {
-            cuvantCurent += c;
+        unsigned char uc = static_cast<unsigned char>(c);
+        if (is_alnum_ascii(uc)) {
+            cuvantCurent += to_lower_ascii(uc);
         } else {
             if (!cuvantCurent.empty()) {
-                // MODIFICAT: Normalizare lowercase folosind std::transform
-                std::transform(cuvantCurent.begin(), cuvantCurent.end(), cuvantCurent.begin(),
-                    [](unsigned char ch){ return std::tolower(ch); });
-                // NOU: Filtrare stop-words
-                if (STOP_WORDS.find(cuvantCurent) == STOP_WORDS.end()) {
-                    cuvinte.push_back(cuvantCurent);
+                if (cuvantCurent.length() >= 2) {
+                    // Optimizare: dacă lungimea cuvântului este > 7, el nu poate fi în setul STOP_WORDS
+                    if (cuvantCurent.length() > 7 || STOP_WORDS.find(cuvantCurent) == STOP_WORDS.end()) {
+                        cuvinte.push_back(cuvantCurent);
+                    }
                 }
-                cuvantCurent = "";
+                cuvantCurent.clear(); // clear() păstrează capacitatea alocată a string-ului, evitând realocări
             }
         }
     }
     
-    // Adăugăm ultimul cuvânt dacă există
     if (!cuvantCurent.empty()) {
-        std::transform(cuvantCurent.begin(), cuvantCurent.end(), cuvantCurent.begin(),
-            [](unsigned char ch){ return std::tolower(ch); });
-        // NOU: Filtrare stop-words
-        if (STOP_WORDS.find(cuvantCurent) == STOP_WORDS.end()) {
-            cuvinte.push_back(cuvantCurent);
+        if (cuvantCurent.length() >= 2) {
+            if (cuvantCurent.length() > 7 || STOP_WORDS.find(cuvantCurent) == STOP_WORDS.end()) {
+                cuvinte.push_back(cuvantCurent);
+            }
         }
     }
     
